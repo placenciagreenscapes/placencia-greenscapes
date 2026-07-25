@@ -20,26 +20,30 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {galleryImages.map((img, i) => (
-            <div
-              key={img.src}
-              className={`group relative overflow-hidden rounded-2xl ${
-                i === 0 ? 'sm:col-span-2 sm:row-span-2' : ''
-              } aspect-square sm:aspect-auto shadow-md hover:shadow-xl transition-all duration-300`}
-            >
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+          {galleryImages.map((img, i) => {
+            const isFeature = i === 0
+            return (
               <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                style={{ backgroundImage: `url(${img.src})` }}
-              />
-              <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/20 transition-colors duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="text-white text-sm font-medium bg-dark/60 backdrop-blur-sm rounded-lg px-3 py-2 inline-block">
-                  {img.alt}
-                </p>
+                key={img.src}
+                className={`group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 ${
+                  isFeature ? 'col-span-2 lg:col-span-2 lg:row-span-2' : ''
+                }`}
+                style={{ minHeight: isFeature ? '320px' : '200px' }}
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${img.src})` }}
+                />
+                <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/20 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-white text-sm font-medium bg-dark/60 backdrop-blur-sm rounded-lg px-3 py-2 inline-block">
+                    {img.alt}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="text-center mt-10">
