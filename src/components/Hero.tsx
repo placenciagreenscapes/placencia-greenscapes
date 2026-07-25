@@ -7,7 +7,7 @@ export default function Hero() {
         style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
       />
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/50 to-dark/80 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/70 to-dark/90 z-10" />
 
       <div className="relative z-20 max-w-4xl mx-auto px-4 text-center text-white py-32">
         <div className="mb-8 flex justify-center">

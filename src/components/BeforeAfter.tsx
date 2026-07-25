@@ -56,35 +56,40 @@ function BeforeAfterCard({ before, after, title, location }: {
   const [showAfter, setShowAfter] = useState(false)
 
   return (
-    <div className="group">
+    <div>
       <div
-        className="relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer shadow-xl"
+        className="relative overflow-hidden rounded-2xl cursor-pointer shadow-xl group"
         onMouseEnter={() => setShowAfter(true)}
         onMouseLeave={() => setShowAfter(false)}
+        onClick={() => setShowAfter((v) => !v)}
       >
-        {/* Before image */}
+        {/* Before image — always visible underneath */}
         <div
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
-          style={{ backgroundImage: `url(${before})`, opacity: showAfter ? 0 : 1 }}
+          className="w-full aspect-[4/3] bg-cover bg-center"
+          style={{ backgroundImage: `url(${before})` }}
         />
-        {/* After image */}
+        {/* After image — slides in from right on hover/tap */}
         <div
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
-          style={{ backgroundImage: `url(${after})`, opacity: showAfter ? 1 : 0 }}
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out"
+          style={{
+            backgroundImage: `url(${after})`,
+            transform: showAfter ? 'translateX(0)' : 'translateX(100%)',
+          }}
         />
 
-        {/* Labels */}
-        <div className={`absolute top-4 left-4 rounded-full px-4 py-1.5 text-xs font-black uppercase transition-opacity duration-300 ${showAfter ? 'opacity-0' : 'opacity-100'}`}
-          style={{ background: 'rgba(0,0,0,0.6)' }}>
+        {/* Before label */}
+        <span className={`absolute top-4 left-4 rounded-full px-4 py-1.5 text-xs font-black uppercase bg-dark/70 text-white transition-opacity duration-300 ${showAfter ? 'opacity-0' : 'opacity-100'}`}>
           Before
-        </div>
-        <div className={`absolute top-4 left-4 rounded-full bg-accent px-4 py-1.5 text-xs font-black uppercase text-dark transition-opacity duration-300 ${showAfter ? 'opacity-100' : 'opacity-0'}`}>
+        </span>
+        {/* After label */}
+        <span className={`absolute top-4 right-4 rounded-full px-4 py-1.5 text-xs font-black uppercase bg-accent text-dark transition-opacity duration-300 ${showAfter ? 'opacity-100' : 'opacity-0'}`}>
           After
-        </div>
+        </span>
 
-        {/* Slider handle */}
-        <div className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg transition-all duration-700"
-          style={{ left: showAfter ? '100%' : '0%' }} />
+        {/* Click hint */}
+        <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-dark/60 backdrop-blur-sm px-4 py-1.5 text-xs text-white/60 md:hidden">
+          Tap to compare
+        </span>
       </div>
 
       <div className="mt-4 flex justify-between items-center">
@@ -92,7 +97,7 @@ function BeforeAfterCard({ before, after, title, location }: {
           <div className="font-bold text-white">{title}</div>
           <div className="text-white/40 text-sm">{location}</div>
         </div>
-        <span className="text-white/30 text-xs">Hover to reveal</span>
+        <span className="text-white/30 text-xs hidden md:inline">Hover to reveal</span>
       </div>
     </div>
   )
