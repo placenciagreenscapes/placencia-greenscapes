@@ -43,8 +43,8 @@ export default function About() {
               <div className="absolute -inset-3 bg-accent/10 rounded-2xl -rotate-2" />
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-xl">
                 <img
-                  src="/logo.jpeg"
-                  alt="Edison — Placencia Greenscapes and Stone"
+                  src="/images/edison.jpg"
+                  alt="Edison — Owner, Placencia Greenscapes and Stone"
                   className="w-full h-full object-cover"
                 />
                 {/* Caption overlay */}
