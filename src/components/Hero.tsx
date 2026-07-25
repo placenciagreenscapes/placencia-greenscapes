@@ -21,8 +21,9 @@ export default function Hero() {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-4">
           <span className="text-white">Placencia</span>{' '}
           <span className="text-accent">Greenscapes</span>
+          <br />
+          <span className="text-white/90">& Stone</span>
         </h1>
-        <p className="text-xl md:text-2xl font-bold text-white/90 mb-2">& Stone</p>
 
         <p className="text-base md:text-lg text-white/70 max-w-xl mx-auto mb-10 leading-relaxed">
           Transforming outdoor spaces across the Placencia peninsula. Expert garden design,
