@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="relative z-20 max-w-4xl mx-auto px-4 text-center text-white py-32">
         <div className="mb-8 flex justify-center">
           <img
-            src="/logo.jpeg"
+            src="/logo.png"
             alt="Placencia Greenscapes and Stone"
             className="w-32 md:w-40 object-contain"
           />

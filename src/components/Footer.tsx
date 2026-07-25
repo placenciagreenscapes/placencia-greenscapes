@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/logo.jpeg" alt="" className="w-10 h-10 rounded-full object-cover" />
+              <img src="/logo.png" alt="" className="w-10 h-10 rounded-full object-cover" />
               <span className="font-display font-bold text-lg">Placencia Greenscapes</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed">

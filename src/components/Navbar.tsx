@@ -43,7 +43,7 @@ export default function Navbar() {
           onClick={(e) => { e.preventDefault(); scrollTo('home') }}
           className="flex items-center gap-2"
         >
-          <img src="/logo.jpeg" alt="Placencia Greenscapes" className="h-10 w-10 rounded-full object-cover" />
+          <img src="/logo.png" alt="Placencia Greenscapes" className="h-10 w-10 rounded-full object-cover" />
           <span className={`font-display font-bold text-lg ${scrolled ? 'text-dark' : 'text-white'}`}>
             Placencia Greenscapes
           </span>
