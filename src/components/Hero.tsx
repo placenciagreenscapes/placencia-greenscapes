@@ -14,7 +14,7 @@ export default function Hero() {
           <img
             src="/logo.png"
             alt="Placencia Greenscapes and Stone"
-            className="w-32 md:w-40 object-contain"
+            className="w-64 md:w-80 object-contain"
           />
         </div>
 
