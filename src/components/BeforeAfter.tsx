@@ -57,10 +57,14 @@ function BeforeAfterCard({ before, after, title, location }: {
 
   return (
     <div className="group">
-      <div
-        className="relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer shadow-xl"
+      <button
+        type="button"
+        className="relative block w-full overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer shadow-xl border-0 p-0 text-left"
         onMouseEnter={() => setShowAfter(true)}
         onMouseLeave={() => setShowAfter(false)}
+        onClick={() => setShowAfter((current) => !current)}
+        aria-label={`${showAfter ? 'Show before' : 'Show after'} image for ${title}`}
+        aria-pressed={showAfter}
       >
         {/* Before image */}
         <div
@@ -81,14 +85,14 @@ function BeforeAfterCard({ before, after, title, location }: {
         <div className={`absolute top-4 left-4 rounded-full bg-accent px-4 py-1.5 text-xs font-black uppercase text-dark transition-opacity duration-300 ${showAfter ? 'opacity-100' : 'opacity-0'}`}>
           After
         </div>
-      </div>
+      </button>
 
       <div className="mt-4 flex justify-between items-center">
         <div>
           <div className="font-bold text-white">{title}</div>
           <div className="text-white/40 text-sm">{location}</div>
         </div>
-        <span className="text-white/30 text-xs">Hover to reveal</span>
+        <span className="text-white/30 text-xs">Hover or tap to reveal</span>
       </div>
     </div>
   )

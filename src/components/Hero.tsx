@@ -1,3 +1,7 @@
+import { lazy, Suspense } from 'react'
+
+const HeroShader = lazy(() => import('./HeroShader'))
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -6,6 +10,9 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
       />
+      <Suspense fallback={null}>
+        <HeroShader />
+      </Suspense>
       {/* Dark overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/70 to-dark/90 z-10" />
 
@@ -57,11 +64,15 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+      <a
+        href="#services"
+        aria-label="Scroll to services"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 motion-safe:animate-[scroll-indicator_2.4s_ease-in-out_infinite]"
+      >
         <svg className="w-6 h-6 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
-      </div>
+      </a>
     </section>
   )
 }

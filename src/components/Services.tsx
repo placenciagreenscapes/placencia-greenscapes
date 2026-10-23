@@ -65,7 +65,7 @@ export default function Services() {
                 <h3 className="text-xl font-black text-white mb-2 group-hover:text-accent transition-colors">
                   {srv.title}
                 </h3>
-                <p className="text-white/70 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-32 overflow-hidden">
+                <p className="text-white/70 text-sm leading-relaxed sm:opacity-0 sm:max-h-0 sm:group-hover:opacity-100 sm:group-hover:max-h-32 transition-opacity duration-300 max-h-32 overflow-hidden">
                   {srv.description}
                 </p>
               </div>

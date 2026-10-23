@@ -81,6 +81,8 @@ export default function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
         >
           <span className={`block w-6 h-0.5 transition-all ${scrolled ? 'bg-dark' : 'bg-white'} ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
           <span className={`block w-6 h-0.5 transition-all ${scrolled ? 'bg-dark' : 'bg-white'} ${mobileOpen ? 'opacity-0' : ''}`} />
@@ -90,7 +92,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-sm shadow-xl mx-4 mt-2 rounded-2xl p-4">
+        <div id="mobile-navigation" className="md:hidden bg-white/95 backdrop-blur-sm shadow-xl mx-4 mt-2 rounded-2xl p-4">
           {navLinks.map((link) => (
             <a
               key={link.to}
