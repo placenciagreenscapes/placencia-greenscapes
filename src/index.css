@@ -56,6 +56,17 @@ html {
   background: var(--color-accent);
 }
 
+@keyframes hero-drift {
+  0% { transform: scale(1.08) translate3d(-1%, 0, 0); }
+  50% { transform: scale(1.11) translate3d(0, -1%, 0); }
+  100% { transform: scale(1.08) translate3d(1%, 0, 0); }
+}
+
+.hero-photo {
+  animation: hero-drift 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
 @keyframes scroll-indicator {
   0%, 100% { transform: translateY(0); opacity: 0.45; }
   50% { transform: translateY(6px); opacity: 0.9; }
@@ -63,6 +74,7 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .hero-photo { animation: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

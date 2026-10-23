@@ -7,7 +7,7 @@ export default function Hero() {
     <section id="home" className="relative min-h-[92vh] flex items-end overflow-hidden bg-primary-dark">
       {/* Full-bleed background image */}
       <div
-        className="absolute inset-0 bg-cover bg-[center_38%] bg-no-repeat"
+        className="hero-photo absolute inset-0 bg-cover bg-[center_38%] bg-no-repeat"
         style={{ backgroundImage: 'url(/images/hero-bg.jpg)' }}
       />
       <Suspense fallback={null}>

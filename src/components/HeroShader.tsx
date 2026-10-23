@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import {
   FilmGrain,
+  FlowingGradient,
   getWebGPUSupport,
   ImageTexture,
   LightLeak,
@@ -54,8 +55,20 @@ export default function HeroShader() {
         onUnavailable={() => setEnabled(false)}
       >
         <ImageTexture url="/images/hero-bg.jpg" objectFit="cover" />
-        <LightLeak opacity={0.12} />
-        <FilmGrain opacity={0.08} />
+        <FlowingGradient
+          colorA="#103e38"
+          colorB="#1b5b4f"
+          colorC="#e7a85b"
+          colorD="#f7f3eb"
+          colorSpace="oklch"
+          speed={0.18}
+          distortion={0.34}
+          seed={5}
+          opacity={0.16}
+          blendMode="softLight"
+        />
+        <LightLeak opacity={0.17} flicker={0.22} speed={0.35} />
+        <FilmGrain opacity={0.08} animated />
         <Vignette opacity={0.2} />
       </Shader>
     </div>
