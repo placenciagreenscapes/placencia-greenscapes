@@ -1,3 +1,7 @@
+import { lazy, Suspense } from 'react'
+
+const AmbientShader = lazy(() => import('./AmbientShader'))
+
 const testimonials = [
   {
     quote: 'Edison transformed our beachfront property. The stone pathway and native garden he designed exceeded every expectation. Our guests comment on it daily.',
@@ -21,7 +25,10 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-primary text-white">
+    <section id="testimonials" className="relative overflow-hidden py-24 md:py-32 bg-primary text-white">
+      <Suspense fallback={null}>
+        <AmbientShader />
+      </Suspense>
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-14">
           <p className="section-kicker mb-4 text-accent">Notes from the peninsula</p>

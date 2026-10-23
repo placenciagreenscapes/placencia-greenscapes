@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
+
+const BeforeAfterShader = lazy(() => import('./BeforeAfterShader'))
 
 const projects = [
   {
@@ -78,6 +80,9 @@ function BeforeAfterCard({ before, after, title, location }: {
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-700"
           style={{ backgroundImage: `url(${after})`, opacity: showAfter ? 1 : 0 }}
         />
+        <Suspense fallback={null}>
+          <BeforeAfterShader image={after} showAfter={showAfter} />
+        </Suspense>
 
         {/* Labels */}
         <div className={`absolute top-4 left-4 rounded-full px-4 py-1.5 text-xs font-black uppercase transition-opacity duration-300 ${showAfter ? 'opacity-0' : 'opacity-100'}`}

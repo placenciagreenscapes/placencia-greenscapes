@@ -1,3 +1,7 @@
+import { lazy, Suspense } from 'react'
+
+const GalleryShader = lazy(() => import('./GalleryShader'))
+
 const galleryImages = [
   { src: '/images/garden-design.jpg', alt: 'Tropical garden design with palm trees' },
   { src: '/images/stone-work.jpg', alt: 'Natural stone pathway and landscaping' },
@@ -36,6 +40,11 @@ export default function Gallery() {
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url(${img.src})` }}
                 />
+                {isFeature && (
+                  <Suspense fallback={null}>
+                    <GalleryShader image={img.src} />
+                  </Suspense>
+                )}
                 <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/20 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white text-sm font-medium bg-dark/70 rounded-lg px-3 py-2 inline-block">
