@@ -47,18 +47,19 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-offwhite">
-      <div className="max-w-3xl mx-auto px-4">
+    <section id="contact" className="py-24 md:py-32 bg-offwhite">
+      <div className="max-w-6xl mx-auto px-4">
         <FadeInSection>
-          <div className="text-center mb-12">
-            <p className="text-accent font-bold uppercase tracking-wider text-sm mb-2">Get In Touch</p>
-            <h2 className="text-4xl md:text-5xl font-black text-dark">Request a Quote</h2>
-            <p className="mt-4 text-dark/60">
+          <div className="grid md:grid-cols-[.8fr_1.2fr] gap-12 items-start">
+          <div>
+            <p className="section-kicker mb-4">Next step</p>
+            <h2 className="display-heading text-5xl md:text-6xl font-normal text-dark">Let's make<br /><span className="text-primary">a place.</span></h2>
+            <p className="mt-6 text-dark/60 leading-relaxed max-w-sm">
               Free consultations. Tell us about your project and Edison will get back to you.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-8 shadow-lg border border-stone-light/20">
+          <form onSubmit={handleSubmit} className="bg-white rounded-[1.25rem] p-7 md:p-9 shadow-[0_16px_40px_rgba(23,35,31,.1)] border border-stone-light/30">
             <div className="grid sm:grid-cols-2 gap-4 mb-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-bold text-dark mb-2">
@@ -144,6 +145,7 @@ export default function ContactForm() {
               <a href="tel:+5016122111" className="text-primary font-semibold hover:underline">+501 612-2111</a>
             </p>
           </form>
+          </div>
         </FadeInSection>
       </div>
     </section>

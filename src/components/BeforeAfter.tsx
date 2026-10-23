@@ -17,12 +17,14 @@ const projects = [
 
 export default function BeforeAfter() {
   return (
-    <section id="transformations" className="py-24 bg-dark text-white">
+    <section id="transformations" className="py-24 md:py-32 bg-primary-dark text-white">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <p className="text-accent font-bold uppercase tracking-widest text-xs mb-3">See the Difference</p>
-          <h2 className="text-4xl md:text-5xl font-black text-white">Before & After</h2>
-          <div className="w-16 h-1 bg-accent mx-auto mt-4 rounded-full" />
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          <div>
+          <p className="section-kicker mb-4 text-accent">A closer look</p>
+          <h2 className="display-heading text-5xl md:text-6xl font-normal text-white">From rough edges<br /><span className="text-accent">to somewhere.</span></h2>
+          </div>
+          <p className="max-w-sm text-white/60 leading-relaxed">Every project starts with the place itself—its light, its weather, its way of living.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -31,13 +33,13 @@ export default function BeforeAfter() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-white/40 text-sm mb-4">Have a project in mind? Let's talk about your vision.</p>
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-5 mt-14 border-t border-white/15 pt-7">
+          <p className="text-white/50 text-sm">Have a project in mind? Let's talk about your vision.</p>
           <a
             href="https://wa.me/5016122111"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-bold text-white hover:bg-accent-dark transition-all hover:scale-105 shadow-lg"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-black text-dark hover:bg-accent-dark transition-all shadow-lg"
           >
             Start Your Project →
           </a>
@@ -89,10 +91,10 @@ function BeforeAfterCard({ before, after, title, location }: {
 
       <div className="mt-4 flex justify-between items-center">
         <div>
-          <div className="font-bold text-white">{title}</div>
+          <div className="font-display text-xl text-white">{title}</div>
           <div className="text-white/40 text-sm">{location}</div>
         </div>
-        <span className="text-white/30 text-xs">Hover or tap to reveal</span>
+        <span className="text-accent/75 text-xs">Hover or tap to reveal</span>
       </div>
     </div>
   )

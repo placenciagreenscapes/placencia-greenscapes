@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2D6A1E;
-  --color-primary-dark: #1B4D0F;
-  --color-primary-light: #4A8C35;
-  --color-accent: #C8960C;
-  --color-accent-dark: #9E7608;
-  --color-stone: #8B7355;
-  --color-stone-light: #C4B5A0;
-  --color-dark: #1A1A1A;
-  --color-light-bg: #F5F2EB;
-  --color-offwhite: #FAF8F5;
-  --font-display: "Georgia", serif;
-  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --color-primary: #1b5b4f;
+  --color-primary-dark: #103e38;
+  --color-primary-light: #4f8f7d;
+  --color-accent: #e7a85b;
+  --color-accent-dark: #b97334;
+  --color-stone: #827562;
+  --color-stone-light: #d8cebd;
+  --color-dark: #17231f;
+  --color-light-bg: #e7dfd1;
+  --color-offwhite: #f7f3eb;
+  --font-display: "Georgia", "Times New Roman", serif;
+  --font-body: "Trebuchet MS", system-ui, sans-serif;
 }
 
 body {
@@ -20,11 +20,40 @@ body {
   font-family: var(--font-body);
   color: var(--color-dark);
   background: var(--color-offwhite);
+  background-image: radial-gradient(rgba(23, 35, 31, .045) .7px, transparent .7px);
+  background-size: 7px 7px;
 }
 
 /* Smooth scroll for anchor links */
 html {
   scroll-behavior: smooth;
+}
+
+::selection { background: var(--color-accent); color: var(--color-dark); }
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.section-kicker {
+  color: var(--color-accent-dark);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.display-heading {
+  font-family: var(--font-display);
+  letter-spacing: -.045em;
+  line-height: .96;
+}
+
+.ink-rule {
+  width: 4.5rem;
+  height: 2px;
+  background: var(--color-accent);
 }
 
 @keyframes scroll-indicator {

@@ -1,14 +1,12 @@
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-light-bg">
+    <section id="about" className="py-24 md:py-32 bg-light-bg">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
-            <p className="text-accent font-bold uppercase tracking-widest text-xs mb-3">Who We Are</p>
-            <h2 className="text-4xl md:text-5xl font-black text-dark mb-6">
-              Meet Edison
-            </h2>
-            <div className="w-16 h-1 bg-accent mb-8 rounded-full" />
+            <p className="section-kicker mb-4">The person behind the work</p>
+            <h2 className="display-heading text-5xl md:text-6xl font-normal text-dark mb-7">Meet Edison.</h2>
+            <div className="ink-rule mb-8" />
             <p className="text-dark/70 leading-relaxed mb-4">
               Edison is a passionate landscaper and stone craftsman based in Placencia, Belize.
               With over a decade of hands-on experience, he's built a reputation for meticulous
@@ -22,15 +20,15 @@ export default function About() {
             </p>
             <div className="flex flex-wrap gap-8 mt-8">
               <div className="text-center">
-                <div className="text-3xl font-black text-primary">10+</div>
+                <div className="font-display text-4xl text-primary">10+</div>
                 <div className="text-dark/50 text-sm font-medium">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-black text-primary">200+</div>
+                <div className="font-display text-4xl text-primary">200+</div>
                 <div className="text-dark/50 text-sm font-medium">Projects Done</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-black text-primary">5★</div>
+                <div className="font-display text-4xl text-primary">5★</div>
                 <div className="text-dark/50 text-sm font-medium">Client Rating</div>
               </div>
             </div>

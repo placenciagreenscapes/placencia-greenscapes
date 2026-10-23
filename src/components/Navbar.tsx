@@ -33,24 +33,24 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-sm shadow-md py-2'
-          : 'bg-transparent py-4'
+          ? 'px-4 pt-3'
+          : 'px-4 pt-5'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 flex items-center justify-between">
         <Link
           to="/#home"
           onClick={(e) => { e.preventDefault(); scrollTo('home') }}
-          className="flex items-center gap-2"
+          className={`flex items-center gap-3 rounded-full px-3 py-2 transition-colors ${scrolled ? 'bg-offwhite/95 shadow-lg' : 'bg-dark/20 backdrop-blur-sm'}`}
         >
-          <img src="/logo.png" alt="Placencia Greenscapes" className="h-10 w-10 rounded-full object-cover" />
-          <span className={`font-display font-bold text-lg ${scrolled ? 'text-dark' : 'text-white'}`}>
-            Placencia Greenscapes
+          <img src="/logo.png" alt="Placencia Greenscapes" className="h-9 w-9 rounded-full object-cover" />
+          <span className={`font-display font-bold text-base ${scrolled ? 'text-dark' : 'text-white'}`}>
+            Placencia <span className="text-accent">Greenscapes</span>
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className={`hidden md:flex items-center gap-1 rounded-full p-1 ${scrolled ? 'bg-offwhite/95 shadow-lg' : 'bg-dark/20 backdrop-blur-sm'}`}>
           {navLinks.map((link) => (
             <a
               key={link.to}
@@ -59,9 +59,7 @@ export default function Navbar() {
                 e.preventDefault()
                 scrollTo(link.to.replace('/#', ''))
               }}
-              className={`text-sm font-semibold transition-colors hover:text-accent ${
-                scrolled ? 'text-dark' : 'text-white'
-              }`}
+              className={`rounded-full px-3 py-2 text-xs font-bold transition-colors hover:bg-accent/20 hover:text-accent ${scrolled ? 'text-dark' : 'text-white'}`}
             >
               {link.label}
             </a>
@@ -70,7 +68,7 @@ export default function Navbar() {
             href="https://wa.me/5016122111"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-accent px-5 py-2 text-sm font-bold text-white hover:bg-accent-dark transition-colors"
+            className="rounded-full bg-accent px-4 py-2 text-xs font-black text-dark hover:bg-accent-dark transition-colors"
           >
             WhatsApp
           </a>
@@ -79,7 +77,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className={`md:hidden flex flex-col gap-1.5 rounded-full p-3 ${scrolled ? 'bg-offwhite shadow-lg' : 'bg-dark/30 backdrop-blur-sm'}`}
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
           aria-controls="mobile-navigation"

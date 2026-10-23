@@ -9,13 +9,14 @@ const galleryImages = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="py-24 bg-white">
+    <section id="gallery" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <p className="text-accent font-bold uppercase tracking-widest text-xs mb-3">Our Work</p>
-          <h2 className="text-4xl md:text-5xl font-black text-dark">Project Gallery</h2>
-          <div className="w-16 h-1 bg-accent mx-auto mt-4 rounded-full" />
-          <p className="mt-6 text-dark/60 max-w-xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
+          <div>
+          <p className="section-kicker mb-4">Field notes</p>
+          <h2 className="display-heading text-5xl md:text-6xl font-normal text-dark">A few places<br /><span className="text-primary">we've shaped.</span></h2>
+          </div>
+          <p className="text-dark/60 max-w-sm leading-relaxed md:pb-1">
             A selection of our recent landscaping and stone work projects across the peninsula.
           </p>
         </div>
@@ -37,7 +38,7 @@ export default function Gallery() {
                 />
                 <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/20 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-white text-sm font-medium bg-dark/60 backdrop-blur-sm rounded-lg px-3 py-2 inline-block">
+                  <p className="text-white text-sm font-medium bg-dark/70 rounded-lg px-3 py-2 inline-block">
                     {img.alt}
                   </p>
                 </div>
